@@ -12,6 +12,13 @@ const routes = [
     name: "notfound",
     component: () => import("@/views/NotFound.vue"),
   },
+  //route chỉnh sửa một liên hệ
+  {
+    path: "/contacts/:id",
+    name: "contact.edit",
+    component: () => import("@/views/ContactEdit.vue"),
+    props: true, // Truyền các biến trong $route.params vào làm props
+  },
 ];
 
 const router = createRouter({
