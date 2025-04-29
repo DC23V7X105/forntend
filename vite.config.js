@@ -15,5 +15,12 @@ export default defineConfig({
 
   server: {
     port: 3001, // server được chạy trên cổng 3001
+    // lấy dữ liệu api từ công 3000
+    proxy: {
+      "/api": {
+        target: "http://localhost:3000/",
+        changeOrigin: true,
+      },
+    },
   },
 });
